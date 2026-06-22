@@ -59,7 +59,7 @@ export default function BentoGrid({ onOpenTool }: BentoGridProps) {
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         
         {/* Simple Section Header */}
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-8 text-left">
+        <div className="mb-12 text-left">
           <div className="max-w-2xl space-y-2">
             <span className="text-primary text-[10px] font-bold uppercase tracking-[0.2em] block">
               Core Architecture
@@ -71,13 +71,6 @@ export default function BentoGrid({ onOpenTool }: BentoGridProps) {
               Six core modules built with aerospace-grade tracking for the most demanding environments on Earth.
             </p>
           </div>
-          
-          <button 
-            onClick={() => onOpenTool('specs')}
-            className="group flex items-center gap-2 text-slate-900 text-sm font-bold hover:text-primary transition-colors shrink-0"
-          >
-            All Specifications <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-          </button>
         </div>
 
         {/* True Minimalist Grid */}
@@ -85,15 +78,14 @@ export default function BentoGrid({ onOpenTool }: BentoGridProps) {
           {features.map((feature) => (
             <div 
               key={feature.id} 
-              onClick={() => onOpenTool(feature.id)}
-              className="group cursor-pointer flex flex-col"
+              className="flex flex-col"
             >
               {/* Flat Image - Zero shadows, zero borders */}
               <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-slate-50 mb-4">
                 <img 
                   src={feature.image} 
                   alt={feature.title}
-                  className="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"
+                  className="w-full h-full object-cover"
                 />
               </div>
 
