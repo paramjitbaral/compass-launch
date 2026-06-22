@@ -77,7 +77,7 @@ export default function InterfaceGallery({ onOpenTool }: InterfaceGalleryProps) 
         </div>
         
         {/* Slide controls */}
-        <div className="flex gap-3 shrink-0">
+        <div className="hidden md:flex gap-3 shrink-0 mt-2 md:mt-0">
           <button 
             onClick={() => scroll('left')}
             className="w-12 h-12 rounded-full border border-slate-200 bg-white hover:bg-slate-50 active:scale-95 transition-all flex items-center justify-center text-slate-700 shadow-sm"
@@ -93,15 +93,15 @@ export default function InterfaceGallery({ onOpenTool }: InterfaceGalleryProps) 
         </div>
       </div>
 
-      {/* Horizontal Scroll Containers */}
+        {/* Horizontal Scroll Containers */}
       <div 
         ref={containerRef}
-        className="flex gap-6 px-6 md:px-12 overflow-x-auto select-none no-scrollbar pb-8 snap-x max-w-7xl mx-auto custom-scrollbar"
+        className="flex gap-4 md:gap-6 px-6 md:px-12 overflow-x-auto select-none no-scrollbar pb-8 snap-x snap-mandatory max-w-7xl mx-auto custom-scrollbar"
       >
         {GALLERY_DATA.map((card) => (
           <div 
             key={card.title}
-            className="flex-none w-[180px] md:w-[220px] snap-center"
+            className="flex-none w-[160px] sm:w-[180px] md:w-[220px] snap-center"
           >
             {/* Image container */}
             <div className="rounded-2xl overflow-hidden shadow-sm border border-slate-100 bg-white relative">

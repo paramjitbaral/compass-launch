@@ -18,25 +18,35 @@ export default function Hero({ onOpenTool }: HeroProps) {
       <div className="absolute top-[-20%] right-[-10%] w-[500px] md:w-[600px] h-[500px] md:h-[600px] bg-radial from-electric-cyan/10 via-primary/5 to-transparent rounded-full pointer-events-none animate-pulse duration-[8s]" />
       <div className="absolute bottom-[-10%] left-[-10%] w-[400px] h-[450px] bg-radial from-primary/5 via-electric-cyan/5 to-transparent rounded-full pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-6 md:px-12 w-full relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-        {/* Left Side: Editorial Typography Copy */}
-        <div className="space-y-8 text-left">
-          
-          {/* No top badge */}
-
-          {/* Large display headline */}
-          <h1 className="font-sans text-5xl md:text-7xl font-extrabold text-slate-900 tracking-tighter leading-[1.05]">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 w-full relative z-10">
+        
+        {/* Mobile Only Headline (Above Grid) */}
+        <div className="block lg:hidden text-center mb-0 pt-4 z-20 relative">
+          <h1 className="font-sans text-[3rem] sm:text-5xl md:text-7xl font-extrabold text-slate-900 tracking-tighter leading-[1.05]">
             Find Your<br/>
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500">True North.</span>
           </h1>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-12 items-center">
+          {/* Left Side: Editorial Typography Copy */}
+          <div className="space-y-6 md:space-y-8 text-center lg:text-left order-2 lg:order-1 flex flex-col items-center lg:items-start -mt-8 md:mt-0 z-20 relative">
+            
+            {/* Desktop Only Headline (Inside Grid) */}
+            <div className="hidden lg:block">
+              <h1 className="font-sans text-5xl md:text-7xl font-extrabold text-slate-900 tracking-tighter leading-[1.05]">
+                Find Your<br/>
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500">True North.</span>
+              </h1>
+            </div>
 
           {/* Description */}
-          <p className="text-slate-500 font-medium text-base md:text-lg leading-relaxed max-w-md">
+          <p className="text-slate-500 font-medium text-base md:text-lg leading-relaxed max-w-md mx-auto lg:mx-0">
             The most advanced digital compass for Android. Beautifully designed, aerospace-grade accuracy, and built for true explorers.
           </p>
 
           {/* Landing Call to actions */}
-          <div className="flex flex-wrap gap-4 pt-2 w-full max-w-[280px] md:max-w-[320px]">
+          <div className="flex flex-wrap gap-4 pt-2 w-full max-w-[280px] md:max-w-[320px] justify-center lg:justify-start">
             <button 
               onClick={() => onOpenTool('download')}
               className="w-full justify-center py-4 px-8 bg-primary text-white font-bold text-base rounded-2xl hover:shadow-xl hover:shadow-primary/25 active:scale-[0.98] transition-all flex items-center gap-3"
@@ -49,7 +59,7 @@ export default function Hero({ onOpenTool }: HeroProps) {
           </div>
 
           {/* Platform Availability */}
-          <div className="pt-8 flex items-center gap-4 opacity-60 hover:opacity-100 transition-opacity">
+          <div className="pt-4 md:pt-8 flex items-center justify-center lg:justify-start gap-4 opacity-60 hover:opacity-100 transition-opacity">
             <span className="text-xs font-semibold text-slate-500 uppercase tracking-widest">Exclusively on</span>
             <div className="flex items-center gap-1.5">
               {/* Android icon */}
@@ -60,21 +70,21 @@ export default function Hero({ onOpenTool }: HeroProps) {
             </div>
           </div>
 
-          {/* Mini Interactive Indicator badges */}
-          <div className="pt-6 border-t border-slate-100 flex flex-wrap items-center gap-6 text-xs text-slate-400 font-semibold">
-            <div className="flex items-center gap-2">
-              <Shield className="w-4 h-4 text-primary" />
-              <span>Offline Mapping Encrypted</span>
+            {/* Mini Interactive Indicator badges */}
+            <div className="pt-6 border-t border-slate-100 flex flex-row flex-wrap items-center justify-center lg:justify-start gap-x-4 gap-y-2 sm:gap-6 text-[11px] sm:text-xs text-slate-400 font-semibold w-full">
+              <div className="flex items-center gap-1.5 sm:gap-2">
+                <Shield className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-primary" />
+                <span>Offline Mapping Encrypted</span>
+              </div>
+              <div className="flex items-center gap-1.5 sm:gap-2">
+                <Activity className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-electric-cyan" />
+                <span>Real-Time Sensor Fusion</span>
+              </div>
             </div>
-            <div className="flex items-center gap-2">
-              <Activity className="w-4 h-4 text-electric-cyan" />
-              <span>Real-Time Sensor Fusion</span>
-            </div>
-          </div>
         </div>
 
         {/* Right Side: Device Mockup and Glassmorphic Stats */}
-        <div className="relative flex justify-center items-center py-6 md:py-8">
+        <div className="relative flex justify-center items-center py-0 md:py-8 order-1 lg:order-2 -mt-4 md:mt-0 z-10 pointer-events-none">
           
           {/* Main Image Container */}
           <div className="relative w-full max-w-[360px] md:max-w-[460px] hover:scale-[1.02] transition-transform duration-700 flex justify-center">
@@ -92,6 +102,7 @@ export default function Hero({ onOpenTool }: HeroProps) {
           </div>
 
         </div>
+      </div>
       </div>
     </header>
   );

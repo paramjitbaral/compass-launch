@@ -19,7 +19,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 flex flex-col font-sans selection:bg-primary/20 select-none">
+    <div className="min-h-screen bg-slate-50 flex flex-col font-sans selection:bg-primary/20 select-none overflow-x-hidden relative w-full">
       {/* Top Fixed Header Menu */}
       <Navigation onOpenTool={handleOpenTool} />
 
@@ -36,7 +36,7 @@ export default function App() {
       </main>
 
       {/* Interactive Telemetry Footer */}
-      <Footer onOpenTool={handleOpenTool} />
+      <Footer />
 
       {/* Dynamic Interactive Simulator Dialog System */}
       <InteractiveDialogs 

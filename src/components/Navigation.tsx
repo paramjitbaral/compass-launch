@@ -10,16 +10,16 @@ export default function Navigation({ onOpenTool }: NavigationProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
 
   return (
-    <nav className="fixed top-0 w-full z-40 bg-white/70 backdrop-blur-xl border-b border-slate-100">
-      <div className="flex justify-between items-center px-6 md:px-12 py-4 max-w-7xl mx-auto">
+    <nav className="fixed top-0 w-full z-40 bg-white/80 backdrop-blur-xl border-b border-slate-100">
+      <div className="flex justify-between items-center px-5 md:px-12 py-3 md:py-4 max-w-7xl mx-auto">
         
         {/* Brand logo */}
         <div className="flex items-center gap-12">
           <a href="#" className="flex items-center gap-2 group">
             <span className="p-1.5 bg-slate-900 text-white rounded-xl group-hover:scale-105 transition-transform shadow-sm">
-              <Compass className="w-6 h-6 stroke-[2]" />
+              <Compass className="w-5 h-5 md:w-6 md:h-6 stroke-[2]" />
             </span>
-            <span className="font-sans text-xl font-bold tracking-tight text-slate-900">
+            <span className="font-sans text-lg md:text-xl font-bold tracking-tight text-slate-900">
               Compass
             </span>
           </a>
@@ -44,12 +44,6 @@ export default function Navigation({ onOpenTool }: NavigationProps) {
             >
               Interfaces
             </a>
-            <button 
-              onClick={() => onOpenTool('specs')}
-              className="text-sm font-semibold text-slate-500 hover:text-primary transition-colors text-left"
-            >
-              Specifications
-            </button>
           </div>
         </div>
 
@@ -67,10 +61,10 @@ export default function Navigation({ onOpenTool }: NavigationProps) {
         </div>
 
         {/* Mobile menu trigger */}
-        <div className="md:hidden flex items-center">
+        <div className="md:hidden flex items-center -mr-2">
           <button 
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="p-2 text-slate-650 hover:bg-slate-100 rounded-xl transition-colors"
+            className="p-2 text-slate-900 hover:bg-slate-100 rounded-xl transition-colors"
           >
             {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
@@ -101,15 +95,6 @@ export default function Navigation({ onOpenTool }: NavigationProps) {
           >
             Interface Gallery
           </a>
-          <button 
-            onClick={() => {
-              setMobileMenuOpen(false);
-              onOpenTool('specs');
-            }}
-            className="w-full text-left block px-4 py-3 text-base font-semibold text-slate-700 hover:bg-slate-50 rounded-xl"
-          >
-            Hardware Specs
-          </button>
           <div className="pt-4 border-t border-slate-100 flex flex-col gap-2">
             <button 
               onClick={() => {
