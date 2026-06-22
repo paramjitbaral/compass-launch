@@ -33,7 +33,7 @@ export default function InteractiveDialogs({ activeTool, onClose }: DialogsProps
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.95, y: 20 }}
           transition={{ type: "spring", duration: 0.5, bounce: 0.15 }}
-          className={`relative w-full bg-white rounded-3xl overflow-hidden shadow-2xl border border-slate-200 z-10 flex flex-col max-h-[90vh] ${activeTool === 'download' ? 'max-w-md' : 'max-w-2xl'}`}
+          className={`relative bg-white rounded-3xl overflow-hidden shadow-2xl border border-slate-200 z-10 flex flex-col max-h-[90vh] ${activeTool === 'download' ? 'w-[85vw] sm:w-full max-w-[320px] md:max-w-md' : 'w-full max-w-2xl'}`}
         >
           {/* Header */}
           {activeTool !== 'download' && (
@@ -61,7 +61,7 @@ export default function InteractiveDialogs({ activeTool, onClose }: DialogsProps
           )}
 
           {/* Scrollable Content Container */}
-          <div className={`flex-1 overflow-y-auto relative ${activeTool === 'download' ? 'p-8 pt-10' : 'p-6 md:p-8'}`}>
+          <div className={`flex-1 overflow-y-auto relative ${activeTool === 'download' ? 'p-6 pt-8 md:p-8 md:pt-10' : 'p-6 md:p-8'}`}>
             {activeTool === 'download' && (
               <button 
                 onClick={onClose}
@@ -950,21 +950,27 @@ interface DownloadAppPanelProps {
 
 function DownloadAppPanel({ onClose }: DownloadAppPanelProps) {
   return (
-    <div className="space-y-6 text-center max-w-sm mx-auto">
-      <Smartphone className="w-14 h-14 text-primary mx-auto stroke-1" />
-      <div className="space-y-2">
-        <h4 className="text-xl font-bold text-slate-900">Get Compass for Android</h4>
-        <p className="text-sm text-slate-500">Deploy the precision-engineered space navigation instrumentation directly to your mobile device.</p>
+    <div className="space-y-6 md:space-y-8 text-center max-w-sm mx-auto py-4">
+      {/* Official Android Logo */}
+      <svg viewBox="0 0 24 24" fill="currentColor" className="w-16 h-16 md:w-20 md:h-20 text-[#3DDC84] mx-auto drop-shadow-sm">
+        <path d="M17.6,9.48l1.84-3.18c0.16-0.31,0.04-0.69-0.26-0.85c-0.29-0.15-0.65-0.06-0.83,0.22l-1.88,3.24 c-2.86-1.21-6.08-1.21-8.94,0L5.65,5.67c-0.19-0.29-0.58-0.38-0.86-0.22C4.5,5.61,4.38,5.99,4.54,6.3L6.4,9.48 C3.3,11.25,1.28,14.44,1,18h22C22.72,14.44,20.7,11.25,17.6,9.48z M7,15.25c-0.69,0-1.25-0.56-1.25-1.25S6.31,12.75,7,12.75 s1.25,0.56,1.25,1.25S7.69,15.25,7,15.25z M17,15.25c-0.69,0-1.25-0.56-1.25-1.25s0.56-1.25,1.25-1.25s1.25,0.56,1.25,1.25 S17.69,15.25,17,15.25z"/>
+      </svg>
+      <div className="space-y-2 md:space-y-3">
+        <h4 className="text-xl md:text-2xl font-bold text-slate-900">Get Compass for Android</h4>
+        <p className="text-sm md:text-base text-slate-500 leading-relaxed">Deploy the precision-engineered space navigation instrumentation directly to your mobile device.</p>
       </div>
 
-      <div className="space-y-3 pt-3">
+      <div className="space-y-4 pt-4 md:pt-6">
         <a 
           href="https://github.com/paramjitbaral/Compass-main/releases/download/v1.0.0/compass.apk"
-          className="w-full py-3.5 bg-primary hover:bg-primary text-white rounded-xl text-sm font-bold shadow-md hover:shadow-xl hover:shadow-primary/20 transition-all flex items-center justify-center gap-2"
+          className="w-full py-4 bg-primary hover:bg-primary-container text-white rounded-xl text-base font-bold shadow-md hover:shadow-xl hover:shadow-primary/20 transition-all flex items-center justify-center gap-2"
         >
-          <Download className="w-4 h-4" /> Download APK
+          <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
+            <path d="M17.6,9.48l1.84-3.18c0.16-0.31,0.04-0.69-0.26-0.85c-0.29-0.15-0.65-0.06-0.83,0.22l-1.88,3.24 c-2.86-1.21-6.08-1.21-8.94,0L5.65,5.67c-0.19-0.29-0.58-0.38-0.86-0.22C4.5,5.61,4.38,5.99,4.54,6.3L6.4,9.48 C3.3,11.25,1.28,14.44,1,18h22C22.72,14.44,20.7,11.25,17.6,9.48z M7,15.25c-0.69,0-1.25-0.56-1.25-1.25S6.31,12.75,7,12.75 s1.25,0.56,1.25,1.25S7.69,15.25,7,15.25z M17,15.25c-0.69,0-1.25-0.56-1.25-1.25s0.56-1.25,1.25-1.25s1.25,0.56,1.25,1.25 S17.69,15.25,17,15.25z"/>
+          </svg>
+          Download APK
         </a>
-        <p className="text-[10px] text-slate-400">Compatible with Android 11+ and ARCore-enabled devices.</p>
+        <p className="text-[11px] md:text-xs text-slate-400">Compatible with Android 11+ and ARCore-enabled devices.</p>
       </div>
     </div>
   );
