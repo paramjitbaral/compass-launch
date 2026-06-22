@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", "Helvetica Neue", Arial, sans-serif;
+  --color-primary: #1565c0;
+  --color-electric-cyan: #00e5ff;
+}
+
+@layer utilities {
+  .text-gradient-cyan {
+    background: linear-gradient(135deg, #1565c0, #00E5FF);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: #f8f9fa;
+  color: #0f172a;
+  overflow-x: hidden;
+  /* Hide scrollbars but keep functionality */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera globally */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox globally */
+* {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+html {
+  font-size: 14px; /* Scales down rem-based tailwind units proportionally */
+}

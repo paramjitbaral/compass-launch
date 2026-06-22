@@ -1,0 +1,6 @@
+{
+  "name": "Compass",
+  "description": "Professional, aerospace-grade, precision-engineered Android navigation platform with immersive augmented reality.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
