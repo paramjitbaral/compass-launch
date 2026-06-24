@@ -35,51 +35,7 @@
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root">
-      <!-- Instant Initial Page Loader -->
-      <style>
-        .app-initial-loader {
-          position: fixed;
-          inset: 0;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          background-color: #ffffff;
-          z-index: 999999;
-          font-family: system-ui, -apple-system, sans-serif;
-        }
-        .app-spinner {
-          width: 48px;
-          height: 48px;
-          border: 4px solid #f1f5f9;
-          border-top-color: #0284c7; /* Primary Blue */
-          border-radius: 50%;
-          animation: app-spin 1s linear infinite;
-          margin-bottom: 24px;
-        }
-        @keyframes app-spin {
-          0% { transform: rotate(0deg); }
-          100% { transform: rotate(360deg); }
-        }
-        .app-loader-text {
-          color: #64748b;
-          font-size: 13px;
-          font-weight: 600;
-          letter-spacing: 0.15em;
-          text-transform: uppercase;
-          animation: app-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-        }
-        @keyframes app-pulse {
-          0%, 100% { opacity: 1; }
-          50% { opacity: 0.5; }
-        }
-      </style>
-      <div class="app-initial-loader">
-        <div class="app-spinner"></div>
-        <div class="app-loader-text">Loading Compass</div>
-      </div>
-    </div>
+    <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
