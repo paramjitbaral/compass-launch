@@ -46,6 +46,26 @@ interface InterfaceGalleryProps {
   onOpenTool: (type: ActiveToolType) => void;
 }
 
+function GalleryImage({ src, alt }: { src: string; alt: string }) {
+  const [isLoaded, setIsLoaded] = React.useState(false);
+
+  return (
+    <div className="rounded-2xl overflow-hidden shadow-sm border border-slate-100 bg-slate-200 relative aspect-[9/19]">
+      {/* Pulse Skeleton (Only visible before load) */}
+      {!isLoaded && (
+        <div className="absolute inset-0 bg-slate-200 animate-pulse" />
+      )}
+      <img 
+        className={`absolute inset-0 w-full h-full object-cover select-none transition-opacity duration-700 ease-out ${isLoaded ? 'opacity-100' : 'opacity-0'}`} 
+        src={src} 
+        alt={alt} 
+        loading="lazy"
+        onLoad={() => setIsLoaded(true)}
+      />
+    </div>
+  );
+}
+
 export default function InterfaceGallery({ onOpenTool }: InterfaceGalleryProps) {
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -103,14 +123,7 @@ export default function InterfaceGallery({ onOpenTool }: InterfaceGalleryProps) 
             key={card.title}
             className="flex-none w-[160px] sm:w-[180px] md:w-[220px] snap-center"
           >
-            {/* Image container */}
-            <div className="rounded-2xl overflow-hidden shadow-sm border border-slate-100 bg-white relative">
-              <img 
-                className="w-full h-auto object-contain select-none" 
-                src={card.src} 
-                alt={card.title} 
-              />
-            </div>
+            <GalleryImage src={card.src} alt={card.title} />
           </div>
         ))}
       </div>
