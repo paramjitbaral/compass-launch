@@ -14,42 +14,42 @@ const features = [
     title: 'AR View',
     description: 'See the compass direction overlaid directly on your live camera feed so you always know where you are looking.',
     icon: <Eye className="w-6 h-6" />,
-    image: 'https://lh3.googleusercontent.com/aida/AP1WRLt0To_bKXx00WqLDLBmuFUUHXqkrWY9-buWUSCRUGOCMwo5TlNz5JvtF4JMHqKsJnXhXljOK9Tqk2SW4HidK8ADCKNJG70yDWL6H0QZMGkwwGVAT8FG5aRew86UOSdQ_iC9p2KcPr0EUv-ZSs_0HJmj23EKxVKr3svSgwRRUz0kfqEI_5Uv8agsceeFNm6lSx3lXkcQbJnKoXMtlRhIqpkrkoucqyliPIFS75l3rzLWj0tuLdH1d98cB8hn'
+    image: '/ar-view.png'
   },
   {
     id: 'true-north' as ActiveToolType,
     title: 'True North Compass',
     description: 'A highly accurate digital compass that relies on advanced sensors to point to True North anywhere in the world.',
     icon: <Compass className="w-6 h-6" />,
-    image: 'https://lh3.googleusercontent.com/aida/AP1WRLvkLyZGrRuwRhzORYeApN6vUZLIxDWGhS7cZhqMcbU-wbbcnCe0MWR8l-wWFa1LtblNj86FeNq1j7hCmzKCHtMp5oRZi1lU2IjK11M_-05LHLHeRNnNV7AT6XhTKWMnBOxH6fvHraarO5YP4BW7dgU5yEH7eRP623bNXJCqb-FQvb0z1gsmxUt8T8IJ-lWCAbxAIBKgK6ZQKLNtFc9aBx8R0R60M4_h7Pz7M1CInwedAoNlACJA_1IvXfnE'
+    image: '/true-north.png'
   },
   {
     id: 'solar-path' as ActiveToolType,
     title: 'Solar Path Tracking',
     description: "Track the sun's exact position and path across the sky throughout the day to plan your outdoor activities.",
     icon: <Sun className="w-6 h-6" />,
-    image: 'https://lh3.googleusercontent.com/aida/AP1WRLuxLvyQ9mCFoMk-O1pOAwSI9vOWqZjQwnOEGwkehpODUkLZeqGtA-Cyd9XokFxkNxOCcuVzKmAg4zPmSWlCsRNq11jEwVOEiFABhdUZ6x1HCSc7zT7TKgzrI5ft261FSLsxfZCDRjh1jRK2fgeDuH6AI46XXxKvMRQeCZLwL1tJqWnHFUq11OW8MxNJaGFP9799CTbgSPA47-B3agZgqbgCdXGvCWLZr0l_n0hVFSbH2CuKFvcJXFc94kyc'
+    image: '/solar-path.png'
   },
   {
     id: 'waypoint' as ActiveToolType,
     title: 'Save Waypoints',
     description: 'Save specific locations and coordinates, and get a reliable arrow pointing exactly where you need to go.',
     icon: <MapPin className="w-6 h-6" />,
-    image: 'https://lh3.googleusercontent.com/aida/AP1WRLujdJmI4TA6RtqS5LqO6bLdsoINT5v_i40EZ-RWWBZfyvtROhwS1JHIIYXc87OBDg4Ghd5A5SnMe432QZawxTMsXVtdfIYIqOHKYQwgG_Zca62bD1TM87ITzMiSEw_GrWoRan5zV21ClnAoC3iFCWojxf8xECjLtUuPAhAMNNXWTkxwRfosH4J9jthRfTWre7n2viAqXyoP83nzWbWKMnOaBx5CGCvdPPkvP7ibfKXXZBhm5hgfVlqt50sR'
+    image: '/save-waypoints.png'
   },
   {
     id: 'target-lock' as ActiveToolType,
     title: 'Target Lock',
     description: 'Lock your compass onto a specific direction and let the app alert you if you ever veer off course.',
     icon: <Target className="w-6 h-6" />,
-    image: 'https://lh3.googleusercontent.com/aida/AP1WRLtCTxO8JXqsco2eJzRUwi4TBfjeqIQW1E3DvXKhXLPWcp8xJ70JqZBM_D1x-b-M-ut1GM-Lf8nfgI4TOo2fmRavQTx-kfKCY3_BZzQT2DFPKTiM907XxnrEFvm88jGdLVZe0vu90CAx-CN4mZJpQ96lDDPgYBXZezdedo_EtgDzICfkJuqeL97ZPZuRpR6HGE1R7wd3JEHzfXmXY0KSaurWOi_UCDj_BfbMDQZrCjw5bGtGYMwWx8yc3ZQk'
+    image: '/target-lock.png'
   },
   {
     id: 'kinetic' as ActiveToolType,
     title: 'Speed & Elevation',
     description: 'Monitor your walking or driving speed and track real-time elevation changes as you explore.',
     icon: <Activity className="w-6 h-6" />,
-    image: 'https://lh3.googleusercontent.com/aida/AP1WRLuvMzdZeMtH1YxvwGY_ZEppSz_8tBPy3yKQ3uTJBxvPRWZHQBZokyUYwtWaLA6_bD128ySwgW8x4ZcG_pCuDsf7yV2tM6xn9agR_9N6Z8zdtiL8AB2oqgIGj9o2kub36bq4GHQTxK3pvbmqqkAjyamQyza3avEls30CQwcjbscYtx6UniJm2VK_2zuKEwVQztSS9gKPeTSZ6hy3mlzmV7PFFRvvAvrsQno44bzOgcAKOjAViPzBK6LhrPo'
+    image: '/kinetic.png'
   }
 ];
 
